@@ -29,6 +29,11 @@ function App() {
         </Route>
       </Routes>
       </BrowserRouter>
+      <div className="container">
+        <div className="birBlock">
+        <h1>Кош келиниздер <br /> Расул маркетине</h1>
+        </div>
+      </div>
     </div>
   );
 }
