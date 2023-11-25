@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState  } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 function Product({production,setProduction}) {
 
@@ -13,18 +13,6 @@ function Product({production,setProduction}) {
         )
     },[])
 
-    const baycart = (obj) =>{
-        const idx = production.findIndex((item)=>item.id === obj.id);
-        if(idx === -1){
-          setProduction([...production, {
-            ...obj,
-            count:1
-          }])
-         }else{
-          production[idx].count++
-          setProduction([...production])
-         }
-        }
   return (
     <div>
         <div className="container">
@@ -49,7 +37,7 @@ function Product({production,setProduction}) {
                     </div> */}
               </div>
               <div className="btn__kup">
-                  <button onClick={()=>baycart} className="btn">Купить</button>
+                  <button className="btn"><Link to='/Main'>Купить</Link></button>
               </div>
         </div>
     </div>

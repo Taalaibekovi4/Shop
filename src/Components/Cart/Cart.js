@@ -17,8 +17,8 @@ function Cart({cart, setCart}) {
   }
   const pluse = (id)=>{
     const idx = cart.findIndex((item)=>item.id === id);
-    if(cart[idx].coun>1){
-      cart[idx].count++;
+    if(cart[idx].count>0){
+      cart[idx].count ++;
       setCart([...cart])
      }else{
       setCart(cart.filter((item)=>{
@@ -65,7 +65,7 @@ function Cart({cart, setCart}) {
                         <button onClick={()=>pluse(item.id)} className="plus">➕</button>
                     </td>
                     <td>
-                        {item.price} $
+                        {(item.price * item.count).toFixed(1)} $
                     </td>
                     <td>
                       <button onClick={()=>delitet(idx)}>Удалить</button>

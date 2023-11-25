@@ -42,7 +42,9 @@ function Main({produc, setProduc, cart, setCart, cotigorios, setCotigorios}) {
                 <div className="card">
                   <div className="card-image">
                     <img src={item.image} />
-                    <span className="card-title">{item.price} $</span>
+                    <div className="block__dollar">
+                    <span className="dollar">{item.price} $</span>
+                    </div>
                   </div>
                   <p>{item.title.substr(0, 30)}</p>
                   <div className="card-content">
